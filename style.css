@@ -3,6 +3,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  text-decoration: none;
   font-family: "Segoe UI", Tahoma, Arial, sans-serif;
 }
 
@@ -17,7 +18,7 @@ body{
 header{
   width:100%;
   background:#f1f1f1;        
-  border-bottom:1px solid #e5e5e5;
+  /* border-bottom:1px solid #e5e5e5; */
 }
 
 .oga{
@@ -42,7 +43,7 @@ header{
   text-decoration:none;
   color:#333;
   font-weight:500;
-  transition: step-end 1s;
+  transition: ease-in 0.3s;
 }
 
 .main-left li a:hover{
@@ -110,19 +111,308 @@ header{
   background:#f7f7f7;
   
 }
+.material-symbols-outlined{
+  display: none;
+}
 
 .mr-1{margin-right:.25rem;}
 .ml-2{margin-left:.5rem;}
 
 
-@media (max-width:1000px){
-  .oga{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-  }
+@media (max-width:993px){
   .main-left{
-    flex-wrap:wrap;
-    gap:15px;
+    display: none;
   }
+  .main-right ul{
+    background: orange;
+  }
+  .material-symbols-outlined{
+    display: none;
+  }
+}
+nav{
+  display: flex; 
+  align-items: center;
+  
+} 
+
+.left-action {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: white;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 15px 10px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  border-bottom: 2px solid #ff6600;
+  color: #003366;
+  background: #f1f1f1;
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 10px 40px;
+  border-radius: 4px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+.search i {
+  font-size: 14px;
+  color: #555;
+  margin-left: 6px;
+}
+
+.internet-banking {
+  background: #ff6600;
+  color: #fff;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+.has-mega{
+  position: relative;
+}
+.mega-dropdown3 {
+  position: absolute;          
+  top: 100%;           
+  left: 150px;
+  width: 80vw;                
+  background: #fff;
+  /* box-shadow: 0 6px 20px rgba(0,0,0,0.1); */
+  padding: 30px 40px;
+  display: none;              
+  z-index: 999;
+}
+
+li:hover > .mega-dropdown3 {
+  display: block;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 600;
+  background: #f1f1f1;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.mega-dropdown3 .banking-container {
+  display: flex;
+  gap: 40px;
+}
+.mega-dropdown3 .menu ul li:hover{
+  color: #ff6600;
+}
+
+.mega-dropdown3 .menu {
+  width: 260px;
+  border-right: 3px solid #ff6600;
+  padding-right: 20px;
+}
+
+.mega-dropdown3 .menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mega-dropdown3 .menu li {
+  padding: 4px 0px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.mega-dropdown3 .content {
+  flex: 1;
+  padding-left: 20px;
+}
+.sub{
+  display: block;
+}
+.mega-dropdown3 .content{
+  display: flex;
+  margin-left: 100px;
+}
+.mega-dropdown3 .title {
+  font-size: 26px;
+  color: #ff6600;
+  margin: 0 0 10px;
+}
+
+.mega-dropdown3 .subtitle {
+  margin: 0 0 30px;
+  font-weight: 500;
+}
+
+.mega-dropdown3 .info {
+  display: block;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.mega-dropdown3 .info img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+
+.mega-dropdown3 .description {
+  max-width: 350px;
+  line-height: 1.5;
+}
+
+.mega-dropdown3 .btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+.mega-dropdown3 .footer-links {
+  display: flex;
+  gap: 40px;
+  /* padding-top: 25px; */
+  border-top: 1px solid #ddd;
+  margin-top: 25px;
+  color: #f60;
+}
+
+.footer-links img{
+  color: #ff6600;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  background: #fff;
+}
+
+/* Left links */
+.links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.links li {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.links li i {
+  color: #f47c20;       /* orange icon color */
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Divider */
+.divider {
+  height: 35px;
+  width: 3px;
+  background: #f47c20;
+  margin: 0 25px;
+}
+
+/* Tagline */
+.tagline {
+  color: #f47c20;
+  font-weight: 600;
+  font-size: 16px;
+}
+/* Style the top-level list item */
+.Borrowing {
+  position: relative;           /* parent is the positioning reference */
+  list-style: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Hide the mega dropdown by default */
+.Borrowing .mega {
+  position: absolute;
+  top: 0;                        /* align tops */
+  left: 100%;                    /* place to the RIGHT of the parent */
+  /* if you prefer left side use: right: 100%; left: auto; */
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 260px;                  /* adjust as needed */
+  display: none;                 /* hidden until hover */
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+
+.Borrowing:hover .mega {
+  display: block;
+}
+
+
+.Borrowing .mega ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+.Borrowing .mega ul li {
+  padding: 6px 0;
+}
+.Borrowing .mega a {
+  text-decoration: none;
+  color: #333;
+}
+.Borrowing .mega a:hover {
+  color: #f47c20;
 }
