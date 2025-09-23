@@ -1,418 +1,490 @@
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  text-decoration: none;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    
 }
-
 body{
-  background:#fff;
-  color:#333;
-  font-size:15px;
-  line-height:1.4;
+  background-color: #EEEEEE;
+}
+:root {
+    --base-color: #ee7e01;
+    --base-brand: #ee7e01;
+    --personal-brand: #a4c519;
+    --private-brand: #000000;
+    --business-brand: #014086;
+    --xclusive-brand: #003624;
+    --secondary-1-brand: #007168;
+    --secondary-2-brand: #b8061f;
+    --white-brand: #ffffff;
+    --dark-orange-brand: #E7450F;
 }
 
 
-header{
-  width:100%;
-  background:#f1f1f1;        
-  /* border-bottom:1px solid #e5e5e5; */
+/* --- Sticky main navigation --- */
+nav#main-navigation {
+    z-index: 99999;
+    position: sticky;
+    width: 100%;
+    box-shadow: 20px 0px 20px rgba(0, 0, 0, 0.05);
 }
 
-.oga{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:7px 10px;
-  font-size: 12px;
-  color: #898686;
+/* Primary (top) nav bar */
+.primary-nav {
+    background: #f1f1f1;
+    font-size: 0.85em;
+    color: #555555;
+    width: 100%;
+    padding: 0 2rem;
+}
+.container-fluid .nav-link {
+    font-size: 17px;
+}
+.primary-nav .container-fluid .nav-link {
+    font-size: 100%;
+}
+.primary-nav .container-fluid ul li:last-child .nav-link {
+    color: #ee7e01 !important;
+    font-weight: 600;
 }
 
-
-.main-left{
-  display:flex;
-  gap:25px;
-  list-style:none;
+.nav-link {
+    transition: color 0.3s;
+    color: #555555;
+}
+.nav-link:hover,
+.nav-link.active,
+.nav-link:focus {
+    text-decoration: none;
+    color: #f98537;
+    outline-width: 0;
+    border-width: 0;
 }
 
-.main-left li a{
-  text-decoration:none;
-  color:#333;
-  font-weight:500;
-  transition: ease-in 0.3s;
+/* Country dropdown list */
+.location-list {
+    position: absolute;
+    top: -2px !important;
+    font-size: 14px;
+    right: 0;
+    z-index: 33;
+    max-width: 500px;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 0;
+    width: 200px;
+    border: none;
+}
+.location{
+    position: relative;
+}
+.location .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
 }
 
-.main-left li a:hover{
-  color: #003F85; 
-  border-top: 4px solid #003F85;
+/* Dropdown menu */
+.location-list {
+    min-width: 220px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 0;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-
-.main-right{
-  position:relative;
+/* Each country link */
+.location-list li {
+    list-style: none;
 }
 
-.main-right > a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-  transition:color .3s;
+.location-list .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 14px;
+    color: #444;
+    white-space: nowrap;
+    transition: background 0.3s, color 0.3s;
 }
 
-.main-right > a:hover{
-  color: #003F85;
+.location-list .nav-link img {
+    width: 18px;
+    height: 18px;
 }
 
-
-.main-right ul{
-  list-style:none;
-  position:absolute;
-  top:100%;
-  right:0;
-  background:#fff;
-  border:1px solid #ddd;
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
-  display:none;                 
-  min-width:220px;
-  padding:8px 0;
-  z-index:1000;
+.location-list .nav-link:hover {
+    background: #f0f4ff;
+    color: #007bff;
 }
 
-
-.main-right:hover ul{
-  display:block;
+/* Fix for Bootstrap hover dropdown (if using hover instead of click) */
+.location:hover .dropdown-menu {
+    display: block;
 }
 
+/* --- Mega (secondary) nav --- */
+.mega-nav {
+    display: flex;
+    height: 55px;
+    font-size: 15px;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+.mega-nav > * { height: 100%; }
+.mega-nav > .left { flex: 0.5; }
+.mega-nav > .center { flex: 2.5; }
+.mega-nav > .right { flex: 1; }
 
-.main-right ul li a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 16px;
-  text-decoration:none;
-  color:#333;
-  transition:background .2s, color .2s;
-  font-weight:500;
+/* main menu links */
+.mega-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: max-content;
+    height: 100%;
+    transition: all 0.2s;
+    overflow-x: hidden;
+}
+.mega-link a {
+    padding: 1em;
+}
+.mega-link::after,
+.primary-nav .d-flex ul .nav-link::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: #eb7824;
+    position: absolute;
+    left: 0;
+}
+.mega-link::after { bottom: 0; }
+
+.primary-nav .nav-link { position: relative; }
+.primary-nav .d-flex ul .nav-link::before { top: 0; }
+
+.mega-link:hover {
+    background-color: #f1f1f1;
+}
+.mega-link:hover.mega-link::after,
+.active.mega-link.mega-link::after,
+.primary-nav .nav-link:hover.nav-link::before,
+.primary-nav .active.nav-link.nav-link::before,
+.hovered.mega-link::after {
+    width: 100%;
+    animation: elongate 0.4s ease-out;
 }
 
-.main-right ul li a img{
-  width:20px;
-  height:auto;
+@keyframes elongate {
+    from { width: 0; }
+    to   { width: 100%; }
 }
 
-.main-right ul li a:hover{
-  background:#f7f7f7;
-  
+@media (max-width: 1200px) {
+    .nav-link {
+        padding-right: 0.5em;
+        padding-left: 0.5em;
+    }
+    .mega-nav,
+    .primary-nav {
+        font-size: 80%;
+    }
 }
-.material-symbols-outlined{
-  display: none;
-}
-
-.mr-1{margin-right:.25rem;}
-.ml-2{margin-left:.5rem;}
-
-
-@media (max-width:993px){
-  .main-left{
-    display: none;
-  }
-  .main-right ul{
-    background: orange;
-  }
-  .material-symbols-outlined{
-    display: none;
-  }
-}
-nav{
-  display: flex; 
-  align-items: center;
-  
-} 
-
-.left-action {
-  display: flex;
-  align-items: center;
-  padding: 0px 20px;
-  background-color: white;
-}
-
-.logo img {
-  height: 45px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  gap: 2px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #000;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 15px 10px;
-  transition: 0.3s;
-}
-
-.nav-links li a:hover {
-  border-bottom: 2px solid #ff6600;
-  color: #003366;
+/* Search field */
+.search-field {
   background: #f1f1f1;
-}
-
-.right-actions {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  outline: 0 !important;
+  flex: 1.5;
 }
-
-.search {
-  display: flex;
-  align-items: center;
-  background: #f3f3f3;
-  padding: 10px 40px;
-  border-radius: 4px;
+.search_input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #333;
 }
-
-.search input {
-  border: none;
-  outline: none;
+.close_button {
   background: transparent;
-  font-size: 14px;
+  border: none;
+  cursor: pointer;
 }
 
-.search i {
-  font-size: 14px;
-  color: #555;
-  margin-left: 6px;
-}
-
-.internet-banking {
-  background: #ff6600;
+/* Internet Banking dropdown */
+.internet-banking-dropdown-new {
+  background: var(--base-brand);
   color: #fff;
-  padding: 10px 16px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: 0.3s;
+  padding: 1em;
+  flex: 1;
+  cursor: pointer;
 }
-.has-mega{
+.internet-banking-dropdown-new a:hover {
+  text-decoration: none;
+}
+.internet-banking-dropdown-new .dropdown-toggle::after {
+  display: none !important;
+}
+.internet-banking-dropdown-new .dropdown-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  transform: translate3d(341px,0,0);
+  transition: transform .7s cubic-bezier(0.25,1,.2,1);
+}
+.internet-banking-dropdown-new:hover .dropdown-menu {
+  transform: translate3d(0,0,0);
+  display: block !important;
+  z-index: 1000001;
+}
+.mega-link a{
+  /* padding-left: 0; */
+  list-style: none;
+  text-decoration: none;
+  /* border: 2px solid red; */
+  color: black;
+
+}
+.hro{
   position: relative;
 }
-.mega-dropdown3 {
-  position: absolute;          
-  top: 100%;           
-  left: 150px;
-  width: 80vw;                
-  background: #fff;
-  /* box-shadow: 0 6px 20px rgba(0,0,0,0.1); */
-  padding: 30px 40px;
-  display: none;              
-  z-index: 999;
+.carousel h2{
+  background: none;
 }
 
-li:hover > .mega-dropdown3 {
-  display: block;
+#heroCarousel .carousel-item {
+  height: 100vh;             
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+#heroCarousel .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);    
 }
 
-h2 {
-  margin: 0 0 20px;
-  font-size: 24px;
+#heroCarousel .carousel-caption {
+  left: 5%;
+  right: auto;
+  bottom: 20%;
+  text-align: left;
+  max-width: 600px;
+  z-index: 2500;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  background-color: #0050b3; 
+  text-decoration: none;
   font-weight: 600;
-  background: #f1f1f1;
-  padding: 10px 15px;
-  width: 100%;
+  border: none;
+  cursor: pointer;            
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.hero-btn:hover {
+  background-color: white; 
+}
+.btn {
+    background-color: #ee7e01;    /* Access orange */
+    border-color:   #ee7e01;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.mega-dropdown3 .banking-container {
-  display: flex;
-  gap: 40px;
+.btn:hover,
+.btn:focus {
+    background-color: #f98537;    /* slightly lighter on hover */
+    border-color:   #f98537;
+    color: #fff;
+    text-decoration: none;
 }
-.mega-dropdown3 .menu ul li:hover{
-  color: #ff6600;
+/* Make sure the quick-services section hugs the carousel with no gap */
+.hero-slider {
+  margin-bottom: 0;            
+}
+.quick-services {
+  background: #f8f9fa;         /* light grey background to stand out */
+  /* padding: 3rem 0;           */
+  margin-top: -4rem;           /* optional: pull upward so it overlaps the bottom of the carousel */
+  position: relative;          /* needed if you want the overlap effect */
+  z-index: 10;                 /* ensures it sits above the carousel image if overlapping */
 }
 
-.mega-dropdown3 .menu {
-  width: 260px;
-  border-right: 3px solid #ff6600;
-  padding-right: 20px;
+.quick-services .card {
+  border: none;
+  /* border-radius: 0.5rem; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.mega-dropdown3 .menu ul {
-  list-style: none;
+.quick-services .card:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 8px 20px rgba(0,0,0,0.1); */
+}
+
+.quick-services .card-body img {
+  width: 60px;
+  height: auto;
+}
+
+.quick-services .card-title {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.quick-services .card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+/* Force quick-service cards to a custom colour */
+.quick-services .card {
+  background-color: #ffffff;   /* change to your preferred colour */
+  color: #000;                /* adjust text colour for contrast */
+}
+.service-box {
+    background: #a5c82d; /* main green */
+    color: #000;
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%); /* slanted right edge */
+  }
+
+  .service-box .content {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .service-box h5 {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .service-box p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .service-box i {
+    margin-right: 10px;
+  }
+
+  /* make them sit side by side full width */
+  .quick-services .d-flex {
+    gap: 0;
+  }
+  .marquee{
+    color: black;
+  }
+  /* .tag{
+    width: 20%;
+    background: #EEEEEE;
+  }
+  .tag p{
+    padding: 10px;
+  }
+  .bend-line{
+    width: 3%;
+    height: 50px;
+    background: #E7450F;
+    transform: skew(-20deg);
+    margin-left: 50px;
+  } */
+   .news-strip {
+  background: #fef6f0; /* light cream bg */
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+.news-strip .tag {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.news-strip .tag p {
   margin: 0;
-  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.mega-dropdown3 .menu li {
-  padding: 4px 0px;
-  font-size: 16px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
+.news-strip .tag .bend-line {
+  display: inline-block;
+  width: 5px;
+  height: 30px;
+  background: #ff6600; 
+  transform: skew(-20deg);
+  margin-left: 8px;
 }
 
-.mega-dropdown3 .content {
+.news-strip marquee {
   flex: 1;
-  padding-left: 20px;
-}
-.sub{
-  display: block;
-}
-.mega-dropdown3 .content{
-  display: flex;
-  margin-left: 100px;
-}
-.mega-dropdown3 .title {
-  font-size: 26px;
-  color: #ff6600;
-  margin: 0 0 10px;
-}
-
-.mega-dropdown3 .subtitle {
-  margin: 0 0 30px;
+  padding: 0.5rem;
+  font-size: 14px;
+  color: #333;
   font-weight: 500;
 }
 
-.mega-dropdown3 .info {
-  display: block;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.mega-dropdown3 .info img {
-  width: 150px;
-  height: auto;
-  object-fit: cover;
-}
-
-.mega-dropdown3 .description {
-  max-width: 350px;
-  line-height: 1.5;
-}
-
-.mega-dropdown3 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #ff6600;
-  color: #fff;
-  padding: 10px 20px;
+.news-strip marquee a {
+  color: #333;
+  margin-right: 2rem;
   text-decoration: none;
-  font-weight: bold;
-  text-transform: lowercase;
-}
-.mega-dropdown3 .footer-links {
-  display: flex;
-  gap: 40px;
-  /* padding-top: 25px; */
-  border-top: 1px solid #ddd;
-  margin-top: 25px;
-  color: #f60;
 }
 
-.footer-links img{
+.news-strip marquee a:hover {
+  text-decoration: underline;
   color: #ff6600;
 }
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 40px;
-  background: #fff;
-}
-
-/* Left links */
-.links {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-}
-
-.links li {
-  display: flex;
-  align-items: center;
-  color: #333;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.links li i {
-  color: #f47c20;       /* orange icon color */
-  margin-right: 8px;
-  font-size: 18px;
-}
-
-/* Divider */
-.divider {
-  height: 35px;
-  width: 3px;
-  background: #f47c20;
-  margin: 0 25px;
-}
-
-/* Tagline */
-.tagline {
-  color: #f47c20;
-  font-weight: 600;
-  font-size: 16px;
-}
-/* Style the top-level list item */
-.Borrowing {
-  position: relative;           /* parent is the positioning reference */
-  list-style: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-/* Hide the mega dropdown by default */
-.Borrowing .mega {
-  position: absolute;
-  top: 0;                        /* align tops */
-  left: 100%;                    /* place to the RIGHT of the parent */
-  /* if you prefer left side use: right: 100%; left: auto; */
-  background: #fff;
-  border: 1px solid #ccc;
-  width: 260px;                  /* adjust as needed */
-  display: none;                 /* hidden until hover */
-  z-index: 1000;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-
-.Borrowing:hover .mega {
+/* ===== Multi-color strip below ===== */
+.news-strip::after {
+  content: "";
   display: block;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #004a98 0%,
+    #004a98 20%,
+    #d62d1e 20%,
+    #d62d1e 40%,
+    #a7bf13 40%,
+    #a7bf13 60%,
+    #f47c26 60%,
+    #f47c26 80%,
+    #007680 80%,
+    #007680 100%
+  );
 }
-
-
-.Borrowing .mega ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 10px 0;
+.news-strip{
+  margin-top: 50px;
 }
-.Borrowing .mega ul li {
-  padding: 6px 0;
-}
-.Borrowing .mega a {
-  text-decoration: none;
-  color: #333;
-}
-.Borrowing .mega a:hover {
-  color: #f47c20;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); 
 }
