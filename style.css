@@ -234,10 +234,10 @@ nav#main-navigation {
   text-decoration: none;
 }
 .internet-banking-dropdown-new .dropdown-toggle::after {
-  display: none !important;
+  display: none ;
 }
 .internet-banking-dropdown-new .dropdown-menu {
-  position: fixed;
+  /* position: f; */
   top: 0;
   right: 0;
   width: 300px;
@@ -250,7 +250,7 @@ nav#main-navigation {
 }
 .internet-banking-dropdown-new:hover .dropdown-menu {
   transform: translate3d(0,0,0);
-  display: block !important;
+  display: block ;
   z-index: 1000001;
 }
 .mega-link a{
@@ -574,6 +574,276 @@ nav#main-navigation {
 #private .tool-icon>path[fill="#014086"] {
     fill: white;
 }
+/* .payday-calc */
+/* ===== Payday Loan Calculator Styles ===== */
+.payday-calc {
+  /* background: #f58220; */
+  color: #fff;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.payday-calc-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+}
+
+/* Orange Left Section */
+.payday-calc-box {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 60px 40px;
+  background: #e06f0f;
+}
+
+.payday-calc-box-1 {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.payday-calc-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.payday-calc-box-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.payday-calc-terms {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 12px 16px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/* Circular Calculator */
+.payday-calc-box-2 {
+  flex: 0 0 280px;
+  text-align: center;
+}
+
+.payday-calc-box-2 p {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.loan-drag-calc {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  border: 12px solid #fbb567;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loan-amount {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.loan-drag-circle {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* White Floating Card */
+.payday-calc-float-parent {
+  flex: 0 0 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -60px; /* overlaps into orange */
+  z-index: 2;
+}
+
+.payday-calc-float {
+  background: #fff;
+  color: #000;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.payday-calc-float-top {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.payday-calc-float-amount {
+  font-size: 38px;
+  font-weight: bold;
+  /* color: #f58220; */
+  margin-bottom: 20px;
+}
+.hidden-btn{
+  color: black;
+  background: transparent;
+  border: 2px solid black;
+  padding: 0;
+  margin: 0;
+}
+.payday-calc-float-text {
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.private-button {
+  padding: 12px 20px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+.private-button:hover {
+  background: transparent;
+  color: #000;
+}
+.bg-overlay {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
+  height: 60px;              /* collapsed height */
+  overflow: hidden;
+  transition: height 0.4s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bg-overlay h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.bg-overlay .overlay-btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover expands */
+.card:hover .bg-overlay {
+  height: 100px; 
+}
+
+/* Reveal button */
+.card:hover .bg-overlay .overlay-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.closa-left {
+  background-color: #a5cf28; /* green background */
+  color: #222;
+  min-height: 100%; /* ensures height consistency */
+}
+
+.closa-right {
+  background: #fff; /* optional if you want white background */
+  min-height: 100%;
+}
+
+.closa-img img {
+  max-height: 100%;
+  width: auto;
+}
+/* Overlay base */
+.service-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+  height: 80px; /* initial small height */
+  overflow: hidden;
+}
+
+/* h5 always visible */
+.service-card .overlay h5 {
+  margin: 0;
+  font-weight: bold;
+  color: #004d40; /* adjust to your theme */
+}
+
+/* Hide paragraph & button initially */
+.service-card .overlay .hidden-text,
+.service-card .overlay .hidden-btn {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* On hover: expand overlay & reveal p + btn */
+.service-card:hover .overlay {
+  height: 50%; 
+}
+
+.service-card:hover .overlay .hidden-text,
+.service-card:hover .overlay .hidden-btn {
+  opacity: 1;
+  max-height: 200px;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .payday-calc-container {
+    flex-direction: column;
+  }
+
+  .payday-calc-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .payday-calc-box-1 {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .payday-calc-box-2 {
+    margin-bottom: 40px;
+  }
+
+  .payday-calc-float-parent {
+    margin-left: 0;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .payday-calc-float {
+    width: 100%;
+    max-width: 400px;
+  }
+}
 
 /* NEWSLETTER */
 
@@ -701,8 +971,25 @@ nav#main-navigation {
   text-decoration: none;
   color: white;
 }
-.main-footer-wrapper{
+/* .main-footer-wrapper{
   visibility: hidden;
+} */
+.helpful-tools-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px; /* spacing between items */
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1000px) {
+  .helpful-tools-wrapper {
+    grid-template-columns: repeat(4, 1fr); /* exactly 4 per row */
+  }
+}
+
+.helpful-tools-wrapper li {
+  display: flex;
 }
 
 @media (max-width: 1024px){
@@ -731,5 +1018,322 @@ nav#main-navigation {
 .material-symbols-outlined{
   font-size: 30px;
   display: none;
+}
+.mobile-view{
+  visibility: hidden;
+}
+
+/* 🌐 Responsive Navigation - below 1000px */
+@media (max-width: 1000px) {
+
+  /* PRIMARY NAV (apps + country only) */
+  .primary-nav ul {
+    display: none ;
+  }
+
+  .primary-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #eee;
+  }
+
+  .primary-nav span.material-symbols-outlined {
+    font-size: 26px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: block;
+  }
+
+  .primary-nav .location a {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .primary-nav .location img {
+    width: 20px;
+    margin-left: 6px;
+  }
+
+  /* MEGA NAV */
+  .mega-nav .center {
+    display: none;
+  }
+
+  .mega-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mega-nav .left {
+    flex: 1;
+    text-align: left;
+  }
+
+  .mega-nav .right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; 
+  }
+
+
+  .search-field {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 8px;
+    background: #fafafa;
+  }
+
+  .search_input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    flex: 1;
+    background: transparent;
+    min-width: 80px;
+  }
+
+  .search-field button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+  }
+
+  
+  .internet-banking-dropdown-new > a.nav-link {
+    padding: 8px 14px;
+    background: #f58220;
+    color: #fff ;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .internet-banking-dropdown-new > a.nav-link:hover {
+    background: #e06f0f;
+  }
+
+  /* Hamburger */
+  .mega-nav .fa-bars {
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+
+  .mega-nav .fa-bars:hover {
+    background: #f5f5f5;
+  }
+  .mobile-view {
+    visibility: visible;
+    margin-bottom: 20px;
+  }
+
+  .mobile-view .accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    background: transparent;
+    /* border-bottom: 1px solid #e0e0e0; */
+    color: #333;
+    border: none;
+  }
+
+  .mobile-view .accordion-header span {
+    flex: 1;
+    text-align: left;
+  }
+
+  .mobile-view ul.collapse {
+    padding: 0 16px 10px;
+  }
+
+  .mobile-view ul.collapse li {
+    margin-bottom: 8px;
+  }
+  
+  .mobile-view ul.collapse li a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+  }
+
+  .mobile-view ul.collapse li a:hover {
+    color: #f58220;
+  }
+
+  /* ✅ Footer contact stacked */
+  .footer-contact {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+    gap: 16px;
+  }
+
+  .footer-contact .left,
+  .footer-contact .middle,
+  .footer-contact .right {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .footer-contact .d-flex {
+    flex-wrap: wrap;
+  }
+
+  .footer-contact .middle img {
+    max-width: 140px;
+    height: auto;
+  }
+
+  /* ✅ Social icons centered */
+  .footer-social a {
+    font-size: 20px;
+    margin: 0 6px;
+    color: #555;
+  }
+
+  .footer-social a:hover {
+    color: #f58220;
+  }
+
+  /* ✅ Copyright stacked */
+  .copyright {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px 10px;
+  }
+
+  .copyright-links ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .copyright-links ul li {
+    margin: 5px 10px;
+  }
+
+  .logo-and-text {
+    justify-content: center;
+  }
+
+  .logo-and-text p {
+    font-size: 14px;
+  }
+}
+/* Styles for screens up to 1000px */
+@media (max-width: 1000px) {
+  .ways-to-bank h2 {
+    font-size: 1.5rem;
+  }
+
+  .ways-to-bank p.lead {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0 15px;
+  }
+
+  /* Grid adjustment: show 3 items per row instead of 4-6 */
+  .ways-to-bank .col-6.col-md-2 {
+    flex: 0 0 25%;   /* 3 per row */
+    max-width: 33.3333%;
+  }
+
+  .bank-item img {
+    width: 65px;
+    height: auto;
+  }
+
+  .bank-item p {
+    font-size: 0.9rem;
+  }
+
+  /* Carousel arrows closer in on smaller screens */
+  #bankCarousel .carousel-control-prev,
+  #bankCarousel .carousel-control-next {
+    width: 5%;
+  }
+}.explore-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-card img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  background: #003366; /* deep blue */
+  color: #fff;
+  padding: 2rem;
+  margin-top: -80px; /* overlap effect */
+  position: relative;
+  z-index: 2;
+}
+
+.card-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  bottom: 0;
+  width: 20px;
+  background: #f58220; /* orange accent */
+  transform: skewY(-3deg);
+  z-index: -1;
+}
+
+.card-content h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-content .btn {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  transition: 0.3s;
+}
+
+.card-content .btn:hover {
+  background: #fff;
+  color: #003366;
+}
+.btn{
+  background-color: transparent;
 }
 
