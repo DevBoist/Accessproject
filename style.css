@@ -484,6 +484,39 @@ nav#main-navigation {
 .news-strip{
   margin-top: 50px;
 }
+.multi-bar {
+  width: 100%;
+  height: 6px; /* thickness of the line */
+  display: flex;
+}
+
+.multi-bar::before {
+  content: "";
+  flex: 1;
+  background: #003366; /* dark blue */
+}
+
+.multi-bar::after {
+  content: "";
+}
+
+.multi-bar div {
+  flex: 1;
+  height: 100%;
+}
+
+.multi-bar {
+  display: flex;
+}
+
+.multi-bar div:nth-child(1) { background: #003366; } /* Blue */
+.multi-bar div:nth-child(2) { background: #d62828; } /* Red */
+.multi-bar div:nth-child(3) { background: #a6ce39; } /* Green */
+.multi-bar div:nth-child(4) { background: #f58220; } /* Orange */
+.multi-bar div:nth-child(5) { background: #007681; } /* Teal */
+.multi-bar{
+  margin-top: 50px;
+}
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   filter: invert(100%); 
@@ -860,7 +893,7 @@ nav#main-navigation {
 }
 
 .main-footer {
-    background: url(../images/access-logo-bg.svg) no-repeat right bottom;
+    background: url(./Access-Images-Library/imgi_128_watermark\ \(1\).svg) no-repeat right bottom;
     background-color: var(--business-brand);
     padding: 5rem 0 3rem;
     overflow: hidden;
