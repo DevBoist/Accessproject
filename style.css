@@ -1258,88 +1258,6 @@ nav#main-navigation {
     gap: 10px;
   }
 
-  .fa-magnifying-glass {
-    visibility: visible;
-    display: block;
-    margin-bottom: 10px;
-    font-size: 30px;
-  }
-
-  .search-field {
-    visibility: hidden;
-    align-items: center;
-    height: 38px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 0 8px;
-    background: #fafafa;
-  }
-
-  .search_input {
-    border: none;
-    outline: none;
-    font-size: 14px;
-    flex: 1;
-    background: transparent;
-    min-width: 80px;
-  }
-
-  .search-field button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 4px;
-  }
-
-
-  .internet-banking-dropdown-new>a.nav-link {
-    padding: 8px 14px;
-    background: #f58220;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  .internet-banking-dropdown-new>a.nav-link:hover {
-    background: #e06f0f;
-  }
-
-  /* Hamburger */
-  .mega-nav .fa-bars {
-    display: block;
-    font-size: 22px;
-    cursor: pointer;
-    color: #333;
-    padding: 8px;
-    border-radius: 6px;
-    transition: background 0.3s;
-  }
-
-  .mega-nav .fa-bars:hover {
-    background: #f5f5f5;
-  }
-
-  .mobile-view {
-    visibility: visible;
-    margin-bottom: 20px;
-  }
-
-  .mobile-view .accordion-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 16px;
-    font-size: 16px;
-    font-weight: 600;
-    background: transparent;
-    /* border-bottom: 1px solid #e0e0e0; */
-    color: #333;
-    border: none;
-  }
 
   .mobile-view .accordion-header span {
     flex: 1;
@@ -1520,4 +1438,45 @@ nav#main-navigation {
 
 .btn {
   background-color: transparent;
+}
+/* Tablet & Mobile (1000px and below) */
+@media (max-width: 1000px) {
+  #main-navigation .search-field input {
+    display: none ;
+  }
+
+  
+  #main-navigation .search-field .fa-magnifying-glass {
+    display: inline-block ;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #333; 
+  }
+
+  
+  #main-navigation .search-field .close_button svg {
+    display: none;
+  }
+  #main-navigation .search-field input {
+    display: none ;
+  }
+
+
+  #main-navigation .search-field .fa-magnifying-glass {
+    font-size: 1rem;   
+    margin-left: 0;  
+  }
+
+
+  #main-navigation .search-field .close_button {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+  }
+
+ 
+  #main-navigation .search-field .close_button svg {
+    width: 12px;
+    height: 12px;
+  }
 }

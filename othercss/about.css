@@ -384,57 +384,7 @@ nav #main-navigation {
     gap: 10px;
   }
 
-  .fa-magnifying-glass {
-    visibility: visible;
-    margin-bottom: 10px;
-    font-size: 30px;
-  }
-  .fa-magnifying-glass{
-    display: block;
-  }
-
-  .search-field {
-    visibility: hidden;
-    align-items: center;
-    height: 38px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 0 8px;
-    background: #fafafa;
-  }
-
-  .search_input {
-    border: none;
-    outline: none;
-    font-size: 14px;
-    flex: 1;
-    background: transparent;
-    min-width: 80px;
-  }
-
-  .search-field button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 4px;
-  }
-
-
-  .internet-banking-dropdown-new>a.nav-link {
-    padding: 8px 14px;
-    background: #f58220;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  .internet-banking-dropdown-new>a.nav-link:hover {
-    background: #e06f0f;
-  }
-
+  
   /* Hamburger */
   .mega-nav .fa-bars {
     display: block;
@@ -1039,4 +989,45 @@ nav #main-navigation {
 
 .news-strip {
   margin-bottom: 50px;
+}
+
+@media (max-width: 1000px) {
+  #main-navigation .search-field input {
+    display: none ;
+  }
+
+  
+  #main-navigation .search-field .fa-magnifying-glass {
+    display: inline-block ;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #333; 
+  }
+
+  
+  #main-navigation .search-field .close_button svg {
+    display: none;
+  }
+  #main-navigation .search-field input {
+    display: none ;
+  }
+
+
+  #main-navigation .search-field .fa-magnifying-glass {
+    font-size: 1rem;   
+    margin-left: 0;  
+  }
+
+
+  #main-navigation .search-field .close_button {
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+  }
+
+ 
+  #main-navigation .search-field .close_button svg {
+    width: 12px;
+    height: 12px;
+  }
 }
