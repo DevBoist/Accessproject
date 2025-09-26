@@ -559,7 +559,7 @@ nav #main-navigation {
   display: inline-block;
   position: relative;
   max-width: 280px;
-  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 99% 100%, 0% 100%);
 }
 
 .achievement-box .arrow {
@@ -844,3 +844,32 @@ nav #main-navigation {
 .accordion-header{
     display: none;
 }
+
+.caption-box {
+  background: rgba(255, 255, 255, 0.313);
+  padding: 20px;
+  max-width: 500px;
+  clip-path: polygon(0 0, 100% 0%, 99% 100%, 0% 100%);
+  position: relative;
+}
+
+.caption-box h5 {
+  font-weight: 700;
+  color: #000;
+}
+
+.caption-box p {
+  color: #333;
+  margin-bottom: 0;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff6600; /* Access orange */
+}
+
+
