@@ -34,7 +34,7 @@ nav#main-navigation {
 }
 
 .fa-magnifying-glass {
-  visibility: hidden;
+    display: none;
 }
 
 /* Primary (top) nav bar */
@@ -1260,6 +1260,7 @@ nav#main-navigation {
 
   .fa-magnifying-glass {
     visibility: visible;
+    display: block;
     margin-bottom: 10px;
     font-size: 30px;
   }

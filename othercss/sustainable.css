@@ -308,7 +308,7 @@ nav #main-navigation {
 }
 
 .fa-magnifying-glass {
-  visibility: hidden;
+    display: none;
 }
 
 /* 🌐 Responsive Navigation - below 1000px */
@@ -326,6 +326,9 @@ nav #main-navigation {
     padding: 8px 16px;
     background: #f5f5f5;
     border-bottom: 1px solid #eee;
+  }
+  .fa-magnifying-glass{
+    display: block;
   }
 
   .fa-magnifying-glass {

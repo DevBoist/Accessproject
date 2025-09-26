@@ -214,7 +214,7 @@ nav #main-navigation {
 }
 
 .fa-magnifying-glass {
-  visibility: hidden;
+    display: none;
 }
 
 @keyframes elongate {
@@ -388,6 +388,9 @@ nav #main-navigation {
     visibility: visible;
     margin-bottom: 10px;
     font-size: 30px;
+  }
+  .fa-magnifying-glass{
+    display: block;
   }
 
   .search-field {
